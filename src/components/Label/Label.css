@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+.titleLabel {
+  padding: 5px 25px;
+  background: #9c9797;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.12em;
+  color: #333333;
+}
+
+.projectLabel {
+  padding: 2px 21px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  line-height: 26px;
+  font-family: "Merriweather", serif;
+}
