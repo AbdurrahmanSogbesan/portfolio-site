@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer > span {
+  font-size: 18px;
+  color: black;
+  line-height: 23px;
+}
+
+.footerLinks > span {
+  margin-right: 14px;
+}

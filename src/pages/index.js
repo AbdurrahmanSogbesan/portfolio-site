@@ -1,7 +1,7 @@
 import * as React from "react";
+import Footer from "../components/Footer/Footer";
 // import Article from "../components/Article/Article";
 import Header from "../components/Header/Header";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
 import { container } from "./index.module.css";
 
 function IndexPage() {
@@ -28,6 +28,7 @@ function IndexPage() {
       {/* {articles.map(({ title, date, time }) => (
         <Article title={title} date={date} time={time} />
       ))} */}
+      <Footer />
     </div>
   );
 }
