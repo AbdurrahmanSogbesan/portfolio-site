@@ -21,6 +21,11 @@ function IndexPage() {
       date: "Mar 3",
       time: "11 min",
     },
+    {
+      title: "Creating a design system in Figma: a practical guide",
+      date: "Mar 3",
+      time: "11 min",
+    },
   ];
   return (
     <div className={container}>
