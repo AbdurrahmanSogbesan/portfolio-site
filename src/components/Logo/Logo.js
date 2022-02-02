@@ -6,6 +6,7 @@ function Logo() {
       xmlns="http://www.w3.org/2000/svg"
       width="175"
       height="14"
+      cursor="pointer"
       viewBox="0 0 175 14"
       fill="none"
     >
