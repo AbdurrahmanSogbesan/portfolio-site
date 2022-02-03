@@ -4,6 +4,7 @@ const icons = {
   linkedin: require("./linkedin").default,
   twitter: require("./twitter").default,
   link: require("./link").default,
+  close: require("./close").default,
 };
 
 export default icons;
