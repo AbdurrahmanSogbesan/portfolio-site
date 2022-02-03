@@ -10,10 +10,11 @@
 }
 
 .projectLabel {
-  padding: 2px 21px;
+  padding: 9px 21px;
   background: black;
   color: white;
   font-size: 12px;
   line-height: 26px;
   font-family: "Merriweather", serif;
+  margin-right: 60px;
 }
