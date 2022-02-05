@@ -1,6 +1,7 @@
 .projectCard {
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .projectCard__name {
@@ -9,3 +10,5 @@
   line-height: 30px;
   color: #333333;
 }
+
+

@@ -1,7 +1,17 @@
+.footerOverlay {
+  width: 100%;
+  height: 204px;
+}
+
+.footerBackground {
+  background-size: cover;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 149px 100px 31px 100px;
 }
 
 .footer > span {

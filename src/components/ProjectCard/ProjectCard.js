@@ -8,7 +8,7 @@ function ProjectCard({ text }) {
       <StaticImage
         width={443}
         height={414}
-        src="../../images/article.png"
+        src="../../images/projectScreenshot.png"
         layout="fixed"
       />
       <span className="projectCard__name">{text}</span>

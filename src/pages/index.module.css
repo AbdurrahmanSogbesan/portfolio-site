@@ -1,7 +1,143 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Varela&display=swap");
 
 .container {
-  margin: 26px 100px 30px 100px;
   padding: 0;
   font-family: "Varela", sans-serif;
+}
+
+.introductionSection {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  margin-bottom: 200px;
+}
+
+.hello {
+  font-size: 18px;
+  line-height: 102.7%;
+  color: #333333;
+  margin-bottom: 7px;
+}
+
+.name {
+  font-family: "Anton", sans-serif;
+  font-size: 144px;
+  line-height: 102.7%;
+  color: #333333;
+  max-width: 543px;
+  margin-bottom: 24px;
+}
+
+.lifeStory {
+  font-size: 20px;
+  line-height: 30px;
+  color: #333333;
+  max-width: 713px;
+  margin-bottom: 46px;
+}
+
+.background {
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.projectSection {
+  padding: 200px 0 200px 100px;
+  display: flex;
+  flex-direction: column;
+  background: #f2f2f2;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+
+.projectTitle {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+  margin-bottom: 24px;
+}
+
+.projectIntro {
+  font-size: 18px;
+  line-height: 30px;
+  color: black;
+}
+
+.seeAll {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #000000;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.articlesSection {
+  padding: 130px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  margin-bottom: 41px;
+}
+
+.articleIntro {
+  font-size: 18px;
+  line-height: 30px;
+  color: black;
+}
+
+.articleContent {
+  max-height: 561px;
+  max-height: 570px;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.articleContent::-webkit-scrollbar {
+  display: none;
+}
+
+.contactOverlay {
+  background: #333333;
+  margin: 0 100px;
+  border-radius: 10px;
+}
+
+.contactSection {
+  padding: 91px 38px;
+  display: flex;
+  flex-direction: column;
+}
+
+.like {
+  font-size: 36px;
+  line-height: 30px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.subText {
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+.contactBackground {
+  background-position: right;
+  background-size: auto;
+  background-repeat: no-repeat;
 }

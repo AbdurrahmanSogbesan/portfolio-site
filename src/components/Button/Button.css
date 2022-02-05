@@ -1,10 +1,10 @@
-
 .button {
-    background: white;
-    border-radius: 4px;
-    font-size: 18px;
-    color: black;
-    padding: 17px 68px;
-    border: none;
-    font-family: inherit;
+  background: white;
+  border-radius: 4px;
+  font-size: 18px;
+  color: black;
+  padding: 17px 68px;
+  border: none;
+  font-family: inherit;
+  width: fit-content;
 }
