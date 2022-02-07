@@ -1,17 +1,22 @@
 import * as React from "react";
-import { header, headerItems } from "./Header.module.css";
+import { header, headerItems, headerHamburger } from "./Header.module.css";
 import DarkToggle from "../DarkToggle/DarkToggle";
 import Logo from "../Logo/Logo";
 
 function Header() {
   return (
     <div className={header}>
-        <Logo />
+      <Logo />
       <div className={headerItems}>
-        <span>Work</span>
-        <span>About</span>
-        <span>Resume</span>
+        <span className="d-md-flex d-none">Work</span>
+        <span className="d-md-flex d-none">About</span>
+        <span className="d-md-flex d-none">Resume</span>
         <DarkToggle />
+        <div className="d-md-none d-flex flex-column mx-3">
+          <div className={`${headerHamburger} d-md-none d-flex`}></div>
+          <div className={`${headerHamburger} d-md-none d-flex`}></div>
+          <div className={`${headerHamburger} d-md-none d-flex`}></div>
+        </div>
       </div>
     </div>
   );

@@ -7,4 +7,12 @@
   border: none;
   font-family: inherit;
   width: fit-content;
+  transition: all 1s ease 0s;
+}
+
+.button:hover {
+  background: #333333;
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
 }

@@ -3,6 +3,19 @@
 .container {
   padding: 0;
   font-family: "Varela", sans-serif;
+  animation: transitionIn 1.5s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }
 
 .introductionSection {
@@ -70,6 +83,10 @@
   color: #000000;
   font-size: 20px;
   line-height: 30px;
+}
+
+.seeAll:hover {
+  text-decoration: underline;
 }
 
 .articlesSection {
@@ -140,4 +157,37 @@
   background-position: right;
   background-size: auto;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 992px) {
+  .introductionSection {
+    padding-left: 30px;
+  }
+
+  .name {
+    font-size: 120px;
+  }
+
+  .projectSection {
+    padding-left: 30px;
+  }
+
+  .projectTitle{
+    padding-right: 30px;
+  }
+
+  .articlesSection {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .contactOverlay {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .name {
+    font-size: 85px;
+  }
 }
