@@ -5,6 +5,7 @@
 
 .footerBackground {
   background-size: cover;
+  z-index: 999;
 }
 
 .footer {
