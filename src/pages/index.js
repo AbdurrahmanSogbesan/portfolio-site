@@ -33,7 +33,7 @@ import {
   contactOverlay,
 } from "./index.module.css";
 import BackgroundImage from "gatsby-background-image";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 
 function IndexPage() {
   const articles = [
@@ -241,7 +241,9 @@ function IndexPage() {
             <span className={subText}>
               Lorem ipsum dlor soli met islum doe net hit...
             </span>
-            <Button text="Reach out" />
+            <Link to="/contact">
+              <Button className="button" text="Reach out" />
+            </Link>
           </div>
         </BackgroundImage>
       </div>

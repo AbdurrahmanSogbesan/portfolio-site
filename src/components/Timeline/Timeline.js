@@ -118,7 +118,7 @@ function Timeline() {
       <div className="card">
         <div className="info">
           <div className="title__row">
-            <span className="title">
+            <span className="timelineTitle">
               {event.title}
               {event.subtitle ? (
                 <span className="subtitle">{event.subtitle}</span>

@@ -54,7 +54,7 @@
 }
 
 /* Title of the card */
-.title {
+.timelineTitle {
   font-size: 19px;
   font-weight: 500;
   display: flex;
@@ -70,12 +70,12 @@
   margin-left: 2px;
 }
 
-.title:hover {
+.timelineTitle:hover {
   text-decoration: underline;
 }
 
 /* Timeline dot  */
-.title::before {
+.timelineTitle::before {
   content: "";
   position: absolute;
   width: 10px;
@@ -109,7 +109,6 @@
 }
 
 @media (max-width: 992px) {
-
   .title__row {
     flex-direction: column;
   }

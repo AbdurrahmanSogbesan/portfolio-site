@@ -16,3 +16,23 @@
   font-weight: bold;
   border: 1px solid white;
 }
+
+.contactButton {
+  background: black;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+  padding: 17px 68px;
+  border: none;
+  font-family: inherit;
+  width: fit-content;
+  transition: all 1s ease 0s;
+  margin-bottom: 3rem;
+}
+
+.contactButton:hover {
+  background: white;
+  color: #333333;
+  font-weight: bold;
+  border: 1px solid #333333;
+}
