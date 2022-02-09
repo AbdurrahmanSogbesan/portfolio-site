@@ -1,7 +1,69 @@
-.projectCard {
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Varela&display=swap");
+
+.projectCard__container {
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  margin-bottom: 20px;
+  font-family: "Varela", sans-serif;
+}
+
+.projectCard__background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  break-inside: avoid;
+  background-size: cover;
+  cursor: pointer;
+  width: 443px;
+  height: 414px;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard__content {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  bottom: 32px;
+  left: 32px;
+  opacity: 0;
+  box-shadow: none;
+  transition: opacity 0.2s ease-in;
+}
+
+.projectCard__overlay {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(transparent, black);
+  transition: opacity 0.5s ease-in;
+}
+
+.projectCard:hover .projectCard__content,
+.projectCard:hover .projectCard__overlay {
+  opacity: 1;
+}
+
+.projectCard__title {
+  font-size: 1.517em;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.projectBaseText {
+  color: #ffffff;
+  font-size: 13.9px;
+  line-height: 2.3;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
 .projectCard__name {
@@ -10,5 +72,3 @@
   line-height: 30px;
   color: #333333;
 }
-
-

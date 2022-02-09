@@ -20,3 +20,44 @@
   margin-right: 60px;
   width: fit-content;
 }
+
+.projectFilter {
+  font-size: 13.9px;
+  color: #545454;
+  margin: 0px 1rem 0px 1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  padding: 3px 9px;
+  border-radius: 5px;
+  /* white-space: nowrap; */
+}
+
+.projectFilter:hover {
+  outline: 5px auto black;
+}
+
+.projectFilterClicked {
+  color: white;
+  font-weight: 800;
+  font-size: 13.9px;
+  margin: 0px 1rem 0px 1rem;
+  background: #343a40;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding: 5px 22px;
+  border-radius: 5px;
+}
+
+.projectCard__label {
+  background: rgb(105, 104, 105);
+  padding: 7px 12px;
+  opacity: 0.9;
+  border-radius: 50px;
+  text-transform: capitalize;
+  font-size: 11px;
+  margin-right: 6px;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  font-weight: 500;
+}
