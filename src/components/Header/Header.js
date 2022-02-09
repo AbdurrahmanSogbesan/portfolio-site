@@ -1,14 +1,28 @@
 import * as React from "react";
-import { header, headerItems, headerHamburger } from "./Header.module.css";
+import {
+  header,
+  headerItems,
+  headerHamburger,
+  activeStyles,
+} from "./Header.module.css";
 import DarkToggle from "../DarkToggle/DarkToggle";
 import Logo from "../Logo/Logo";
+import { Link } from "gatsby";
 
 function Header() {
   return (
     <div className={header}>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <div className={headerItems}>
-        <span className="d-md-flex d-none">Work</span>
+        <Link
+          className="d-md-flex d-none"
+          to="/works"
+          activeClassName={activeStyles}
+        >
+          <span>Work</span>
+        </Link>
         <span className="d-md-flex d-none">About</span>
         <span className="d-md-flex d-none">Resume</span>
         <DarkToggle />

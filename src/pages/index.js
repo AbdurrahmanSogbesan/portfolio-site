@@ -85,13 +85,42 @@ function IndexPage() {
   ];
 
   const projects = [
-    "Bloco",
-    "Bloco",
-    "Bloco",
-    "Bloco",
-    "Bloco",
-    "Bloco",
-    "Bloco",
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
+    {
+      title: "Bloco",
+      description: "An event planning website",
+      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
+      text: "Bloco",
+    },
   ];
 
   const settings = {
@@ -180,8 +209,13 @@ function IndexPage() {
         </div>
 
         <Slider {...settings}>
-          {projects.map((text) => (
-            <ProjectCard text={text} />
+          {projects.map(({ title, description, labels, text }) => (
+            <ProjectCard
+              title={title}
+              description={description}
+              labels={labels}
+              text={text}
+            />
           ))}
         </Slider>
       </div>
