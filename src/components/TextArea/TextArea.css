@@ -1,0 +1,19 @@
+.textarea {
+  background: transparent;
+  margin-bottom: 2rem;
+  resize: none;
+  color: black;
+  padding: 24px 21px;
+  border: 1px solid #eaeaea;
+  outline: none;
+  font-style: inherit;
+  width: 468px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  border-radius: 0.25rem;
+}
+
+.textarea::placeholder {
+  font-style: inherit;
+}
