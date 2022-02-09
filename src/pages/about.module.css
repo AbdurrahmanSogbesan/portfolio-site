@@ -1,0 +1,30 @@
+.aboutContainer {
+  animation: transitionIn 1.5s;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+.aboutBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16% 3% 20%;
+}
+
+@media (max-width: 992px) {
+  .aboutBody {
+    padding: 0 0 30px 0;
+    margin: 28px 33px;
+  }
+}

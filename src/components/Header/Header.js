@@ -23,7 +23,13 @@ function Header() {
         >
           <span>Work</span>
         </Link>
-        <span className="d-md-flex d-none">About</span>
+        <Link
+          className="d-md-flex d-none"
+          to="/about"
+          activeClassName={activeStyles}
+        >
+          <span>About</span>
+        </Link>
         <span className="d-md-flex d-none">Resume</span>
         <DarkToggle />
         <div className="d-md-none d-flex flex-column mx-3">
