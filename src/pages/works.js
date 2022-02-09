@@ -5,6 +5,7 @@ import {
   projectContent,
   filterSection,
   projectSection,
+  worksOverlay,
 } from "./works.module.css";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -123,7 +124,7 @@ function works() {
     },
   ];
   return (
-    <div>
+    <div className={worksOverlay}>
       <Header />
       <div className={worksContainer}>
         <span className={titleName}>My Works</span>
