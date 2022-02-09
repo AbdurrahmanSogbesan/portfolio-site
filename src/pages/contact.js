@@ -37,8 +37,8 @@ function contact() {
           />
           <Button className="contactButton" text="Send Message" />
         </form>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
