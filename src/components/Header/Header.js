@@ -30,7 +30,13 @@ function Header() {
         >
           <span>About</span>
         </Link>
-        <span className="d-md-flex d-none">Resume</span>
+        <Link
+          className="d-md-flex d-none"
+          to="/resume"
+          activeClassName={activeStyles}
+        >
+          <span>Resume</span>
+        </Link>
         <DarkToggle />
         <div className="d-md-none d-flex flex-column mx-3">
           <div className={`${headerHamburger} d-md-none d-flex`}></div>
