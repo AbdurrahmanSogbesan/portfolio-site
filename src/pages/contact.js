@@ -10,8 +10,21 @@ import {
   contactForm,
   contactOverlay,
 } from "./contact.module.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 function contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success(
+      "Message Sent",
+      { position: toast.POSITION.TOP_CENTER },
+      { autoClose: 10000 }
+    );
+    document.getElementById("myForm").reset();
+  };
+
   return (
     <div className={contactOverlay}>
       <Header />
@@ -21,7 +34,12 @@ function contact() {
           Get in touch or shoot an email directly on
           <strong> abdurrahman0803@gmail.com</strong>
         </p>
-        <form className={contactForm} action="submit">
+        <form
+          id="myForm"
+          onSubmit={handleSubmit}
+          className={contactForm}
+          action="submit"
+        >
           <TextBox name="name" type="text" placeholder="Name" required="true" />
           <TextBox
             name="email"
