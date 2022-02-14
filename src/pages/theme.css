@@ -1,0 +1,51 @@
+body {
+  --bg: white;
+  --textNormal: #333;
+  --textTitle: #222;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+  background-color: var(--bg);
+  color: var(--textNormal);
+  transition: all 800ms ease-out;
+
+  --projectbg: #f2f2f2;
+  --burger-bg: #333333;
+  --contact-bg: #333333;
+  --svgfill: #333;
+  --timeline-card: white;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #333333;
+  --textNormal: white;
+  --textTitle: white;
+  --textLink: yellow;
+  --hr: hsla(0, 0%, 100%, 0.2);
+  --projectbg: #4f4f4f;
+  --burger-bg: white;
+  --contact-bg: #4f4f4f;
+  --svgfill: white;
+  --timeline-card: #333;
+
+  background-color: var(--bg);
+  color: var(--textNormal);
+
+  transition: all 800ms ease-out;
+}
+
+.dark span {
+  color: var(--textNormal);
+}
+
+.dark form input {
+  color: var(--textNormal);
+}
+.dark form textarea {
+  color: var(--textNormal);
+}
+/* 
+.dark svg path {
+  fill: white;
+} */

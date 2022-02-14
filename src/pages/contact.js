@@ -1,4 +1,6 @@
 import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
+
 import Header from "../components/Header/Header";
 import TextBox from "../components/TextBox/TextBox";
 import TextArea from "../components/TextArea/TextArea";
@@ -10,27 +12,31 @@ import {
   contactForm,
   contactOverlay,
 } from "./contact.module.css";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
-function contact() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+function Contact() {
+  const [state, handleSubmit] = useForm("xknyrojz");
+
+  if (state.succeeded) {
     toast.success(
       "Message Sent",
-      { position: toast.POSITION.TOP_CENTER },
+      { position: toast.POSITION.BOTTOM_RIGHT },
       { autoClose: 10000 }
     );
+    toast.clearWaitingQueue();
     document.getElementById("myForm").reset();
-  };
+  }
 
   return (
     <div className={contactOverlay}>
       <Header />
       <div className={contactContainer}>
-        <span className={contactTitle}>Contact.</span>
-        <p className="subtitle">
+        <span style={{ color: "var(--textNormal)" }} className={contactTitle}>
+          Contact.
+        </span>
+        <p style={{ color: "var(--textNormal)" }} className="subtitle">
           Get in touch or shoot an email directly on
           <strong> abdurrahman0803@gmail.com</strong>
         </p>
@@ -41,24 +47,36 @@ function contact() {
           action="submit"
         >
           <TextBox name="name" type="text" placeholder="Name" required="true" />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
           <TextBox
             name="email"
             type="email"
             placeholder="Email"
             required="true"
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
           <TextArea
             name="message"
             placeholder="Message"
             rows="5"
             required="true"
           />
-          <Button className="contactButton" text="Send Message" />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+          <Button
+            disabled={state.submitting}
+            className="contactButton"
+            text="Send Message"
+          />
         </form>
+        <ToastContainer limit={1} />
       </div>
       <Footer />
     </div>
   );
 }
 
-export default contact;
+export default Contact;

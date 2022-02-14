@@ -61,3 +61,7 @@
   color: #ffffff;
   font-weight: 500;
 }
+
+.dark .projectFilterClicked {
+  background: #697179;
+}

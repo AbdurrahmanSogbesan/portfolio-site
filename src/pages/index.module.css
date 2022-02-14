@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Varela&display=swap");
-
 .container {
   padding: 0;
   font-family: "Varela", sans-serif;
@@ -53,6 +52,7 @@
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 999;
 }
 
 .projectSection {
@@ -66,7 +66,7 @@
 .projectTitle {
   display: flex;
   justify-content: space-between;
-  padding-right: 100px;
+  padding-right: 33px;
   margin-bottom: 24px;
 }
 
@@ -74,6 +74,10 @@
   font-size: 18px;
   line-height: 30px;
   color: black;
+}
+
+.projectTitle a {
+  text-decoration: none !important;
 }
 
 .seeAll {
@@ -172,7 +176,7 @@
     padding-left: 30px;
   }
 
-  .projectTitle{
+  .projectTitle {
     padding-right: 30px;
   }
 

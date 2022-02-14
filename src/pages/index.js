@@ -34,6 +34,7 @@ import {
 } from "./index.module.css";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import "./theme.css";
 
 function IndexPage() {
   const articles = [
@@ -184,28 +185,35 @@ function IndexPage() {
   return (
     <div className={container}>
       <BackgroundImage className={background} fluid={imageData}>
-        <Header />
-        <div className={introductionSection}>
-          <span className={hello}>NICE TO MEET YOU, I AM</span>
-          <span className={name}>HABIB SOGBESAN</span>
-          <span className={lifeStory}>
-            Since beginning my journey as a software engineer nearly 4 years
-            ago, I've done both physical and remote work for agencies, and
-            collaborated with talented people to create seamless software
-            products for both business and consumer use. I'm naturally curious,
-            passionate about problem solving and perpetually working on
-            improving my skills one line of code at a time.
-          </span>
-          <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
+        <div>
+          <Header style={{ backgroundColor: "var(--bg)"}}/>
+          <div className={introductionSection}>
+            <span className={hello}>NICE TO MEET YOU, I AM</span>
+            <span className={name}>HABIB SOGBESAN</span>
+            <span className={lifeStory}>
+              Since beginning my journey as a software engineer nearly 4 years
+              ago, I've done both physical and remote work for agencies, and
+              collaborated with talented people to create seamless software
+              products for both business and consumer use. I'm naturally
+              curious, passionate about problem solving and perpetually working
+              on improving my skills one line of code at a time.
+            </span>
+            <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
+          </div>
         </div>
       </BackgroundImage>
 
-      <div className={projectSection}>
+      <div
+        className={projectSection}
+        style={{ backgroundColor: "var(--projectbg)" }}
+      >
         <div className={projectTitle}>
           <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
-          <span className={seeAll}>
-            See All <Icon icon="arrow" />
-          </span>
+          <Link to="/works">
+            <span className={seeAll}>
+              See All <Icon icon="arrow" />
+            </span>
+          </Link>
         </div>
 
         <Slider {...settings}>
@@ -234,7 +242,10 @@ function IndexPage() {
         </div>
       </div>
 
-      <div className={contactOverlay}>
+      <div
+        className={contactOverlay}
+        style={{ backgroundColor: "var(--contact-bg)" }}
+      >
         <BackgroundImage className={contactBackground} fluid={imageData}>
           <div className={contactSection}>
             <span className={like}>Like what you see</span>

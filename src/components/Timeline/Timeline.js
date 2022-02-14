@@ -115,7 +115,7 @@ function Timeline() {
 
   const renderEvents = (events) => {
     return events.map((event) => (
-      <div className="card">
+      <div className="card" style={{ background: "var(--timeline-card)" }}>
         <div className="info">
           <div className="title__row">
             <span className="timelineTitle">

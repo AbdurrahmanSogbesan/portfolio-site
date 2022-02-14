@@ -1,25 +1,25 @@
-import * as React from "react";
+import React from "react";
 
-function DarkToggle() {
+function moon(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="27"
-      height="27"
-      cursor="pointer"
       viewBox="0 0 27 27"
       fill="none"
+      cursor="pointer"
+
+      {...props}
     >
       <circle
         cx="13.5"
         cy="13.5"
         r="12"
         fill="white"
-        stroke="#333333"
+        stroke="white"
         stroke-width="3"
       />
     </svg>
   );
 }
 
-export default DarkToggle;
+export default moon;

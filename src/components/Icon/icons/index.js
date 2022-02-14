@@ -5,6 +5,8 @@ const icons = {
   twitter: require("./twitter").default,
   link: require("./link").default,
   close: require("./close").default,
+  sun: require("./sun").default,
+  moon: require("./moon").default,
 };
 
 export default icons;

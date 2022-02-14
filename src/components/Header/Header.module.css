@@ -36,6 +36,10 @@
   border-radius: 2px;
 }
 
+.dark .headerHamburger {
+  background-color: white;
+}
+
 .activeStyles > span {
   font-size: 20px;
   text-decoration: underline;

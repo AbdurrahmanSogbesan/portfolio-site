@@ -8,9 +8,17 @@
   cursor: pointer;
 }
 
+.dark .article {
+  border: 1px solid white;
+}
+
 .article:hover {
   border: 2px solid #333333;
   font-weight: bold;
+}
+
+.dark .article:hover {
+  border: 2px solid white;
 }
 
 .title {
