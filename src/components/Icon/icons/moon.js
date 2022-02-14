@@ -7,7 +7,6 @@ function moon(props) {
       viewBox="0 0 27 27"
       fill="none"
       cursor="pointer"
-
       {...props}
     >
       <circle
