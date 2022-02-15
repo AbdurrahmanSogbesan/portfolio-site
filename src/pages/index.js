@@ -35,6 +35,7 @@ import {
 import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import "./theme.css";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 function IndexPage() {
   const articles = [
@@ -183,82 +184,86 @@ function IndexPage() {
   const imageData = data.desktop.childImageSharp.fluid;
 
   return (
-    <div className={container}>
-      <BackgroundImage className={background} fluid={imageData}>
-        <div>
-          <Header style={{ backgroundColor: "var(--bg)"}}/>
-          <div className={introductionSection}>
-            <span className={hello}>NICE TO MEET YOU, I AM</span>
-            <span className={name}>HABIB SOGBESAN</span>
-            <span className={lifeStory}>
-              Since beginning my journey as a software engineer nearly 4 years
-              ago, I've done both physical and remote work for agencies, and
-              collaborated with talented people to create seamless software
-              products for both business and consumer use. I'm naturally
-              curious, passionate about problem solving and perpetually working
-              on improving my skills one line of code at a time.
-            </span>
-            <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
-          </div>
-        </div>
-      </BackgroundImage>
+    <div className={container} id="outer-container">
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+      <div id="page-wrap">
+        <BackgroundImage className={background} fluid={imageData}>
+          <div>
+            <Header style={{ backgroundColor: "var(--bg)" }} />
 
-      <div
-        className={projectSection}
-        style={{ backgroundColor: "var(--projectbg)" }}
-      >
-        <div className={projectTitle}>
-          <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
-          <Link to="/works">
+            <div className={introductionSection}>
+              <span className={hello}>NICE TO MEET YOU, I AM</span>
+              <span className={name}>HABIB SOGBESAN</span>
+              <span className={lifeStory}>
+                Since beginning my journey as a software engineer nearly 4 years
+                ago, I've done both physical and remote work for agencies, and
+                collaborated with talented people to create seamless software
+                products for both business and consumer use. I'm naturally
+                curious, passionate about problem solving and perpetually
+                working on improving my skills one line of code at a time.
+              </span>
+              <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
+            </div>
+          </div>
+        </BackgroundImage>
+
+        <div
+          className={projectSection}
+          style={{ backgroundColor: "var(--projectbg)" }}
+        >
+          <div className={projectTitle}>
+            <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
+            <Link to="/works">
+              <span className={seeAll}>
+                See All <Icon icon="arrow" />
+              </span>
+            </Link>
+          </div>
+
+          <Slider {...settings}>
+            {projects.map(({ title, description, labels, text }) => (
+              <ProjectCard
+                title={title}
+                description={description}
+                labels={labels}
+                text={text}
+              />
+            ))}
+          </Slider>
+        </div>
+
+        <div className={articlesSection}>
+          <div className={articleTitle}>
+            <span className={articleIntro}>ARTICLES</span>
             <span className={seeAll}>
               See All <Icon icon="arrow" />
             </span>
-          </Link>
-        </div>
-
-        <Slider {...settings}>
-          {projects.map(({ title, description, labels, text }) => (
-            <ProjectCard
-              title={title}
-              description={description}
-              labels={labels}
-              text={text}
-            />
-          ))}
-        </Slider>
-      </div>
-
-      <div className={articlesSection}>
-        <div className={articleTitle}>
-          <span className={articleIntro}>ARTICLES</span>
-          <span className={seeAll}>
-            See All <Icon icon="arrow" />
-          </span>
-        </div>
-        <div className={articleContent}>
-          {articles.map(({ title, date, time }) => (
-            <Article title={title} date={date} time={time} />
-          ))}
-        </div>
-      </div>
-
-      <div
-        className={contactOverlay}
-        style={{ backgroundColor: "var(--contact-bg)" }}
-      >
-        <BackgroundImage className={contactBackground} fluid={imageData}>
-          <div className={contactSection}>
-            <span className={like}>Like what you see</span>
-            <span className={subText}>
-              Lorem ipsum dlor soli met islum doe net hit...
-            </span>
-            <Link to="/contact">
-              <Button className="button" text="Reach out" />
-            </Link>
           </div>
-        </BackgroundImage>
+          <div className={articleContent}>
+            {articles.map(({ title, date, time }) => (
+              <Article title={title} date={date} time={time} />
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={contactOverlay}
+          style={{ backgroundColor: "var(--contact-bg)" }}
+        >
+          <BackgroundImage className={contactBackground} fluid={imageData}>
+            <div className={contactSection}>
+              <span className={like}>Like what you see</span>
+              <span className={subText}>
+                Lorem ipsum dlor soli met islum doe net hit...
+              </span>
+              <Link to="/contact">
+                <Button className="button" text="Reach out" />
+              </Link>
+            </div>
+          </BackgroundImage>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

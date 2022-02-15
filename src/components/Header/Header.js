@@ -42,7 +42,9 @@ function Header() {
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
               // <div className={header.toggleTheme}>
-              <Icon width="30" height="30"
+              <Icon
+                width="30"
+                height="30"
                 icon={theme === "dark" ? "moon" : "sun"}
                 onClick={() =>
                   theme === "dark" ? toggleTheme("light") : toggleTheme("dark")
