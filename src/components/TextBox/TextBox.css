@@ -17,3 +17,9 @@
 .textbox::placeholder {
   font-style: inherit;
 }
+
+@media (max-width: 500px) {
+  .textbox {
+    width: 100%;
+  }
+}

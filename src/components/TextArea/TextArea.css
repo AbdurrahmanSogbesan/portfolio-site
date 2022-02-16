@@ -17,3 +17,9 @@
 .textarea::placeholder {
   font-style: inherit;
 }
+
+@media (max-width: 500px) {
+  .textarea {
+    width: 100%;
+  }
+}

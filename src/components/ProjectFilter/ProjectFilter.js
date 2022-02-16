@@ -3,7 +3,7 @@ import Label from "../Label/Label";
 import "./ProjectFilter.css";
 
 function ProjectFilter({ filters }) {
-  const [selectedFilter, setSelectedFilter] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState(filters[0]);
   return (
     <div>
       {filters.map((filter) => (
