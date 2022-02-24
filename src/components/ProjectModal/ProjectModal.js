@@ -4,15 +4,20 @@ import Icon from "../Icon/Icon";
 import Label from "../Label/Label";
 import { StaticImage } from "gatsby-plugin-image";
 
-function ProjectModal() {
+function ProjectModal(handleClose, show) {
   const labels = ["VueJS", "NODEJS", "EXPRESSJS", "MONGODB", "FIREBASE"];
+
+  const showHideClassName = show
+    ? "projectModal display-block"
+    : "projectModal display-none";
+
   return (
-    <div className="projectModal">
+    <div className={showHideClassName}>
       <div className="projectModal__header">
         <Icon height="48" width="48" className="iconSpacing" icon="github" />
         <Icon height="48" width="48" icon="link" />
         <div className="closeIcon">
-          <Icon icon="close" width="40" height="40" />
+          <Icon icon="close" onClick={handleClose} width="40" height="40" />
         </div>
       </div>
       <StaticImage layout="fixed" src="../../images/project.png" />

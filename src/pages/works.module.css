@@ -50,6 +50,11 @@
   grid-template-columns: 480px 480px;
 }
 
+.skeletonSizing {
+  width: 443px !important;
+  height: 414px !important;
+}
+
 @media (max-width: 992px) {
   .worksContainer {
     padding: 0 30px;
@@ -63,5 +68,31 @@
     display: flex;
     align-items: center;
     width: 100%;
+  }
+
+  .proejctCard__container {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .projectSection {
+    align-items: normal;
+    max-width: 350px;
+  }
+
+  .worksContainer {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .worksContainer {
+    padding: 0 10px;
+  }
+
+  .skeletonSizing {
+    width: 350px !important;
+    height: 327px !important;
   }
 }

@@ -114,6 +114,11 @@
   padding: 0 12px;
 }
 
+.skeleton-sizing {
+  height: 302px;
+  width: 626px !important;
+}
+
 @media (max-width: 992px) {
   .title__row {
     flex-direction: column;
@@ -121,5 +126,19 @@
 
   .outer {
     max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .skeleton-sizing {
+    height: 272px;
+    width: 400px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .skeleton-sizing {
+    height: 272px;
+    width: 350px !important;
   }
 }

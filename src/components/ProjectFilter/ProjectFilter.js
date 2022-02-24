@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import Label from "../Label/Label";
 import "./ProjectFilter.css";
 
-function ProjectFilter({ filters }) {
-  const [selectedFilter, setSelectedFilter] = useState(filters[0]);
+function ProjectFilter({ filters, onClick, selected}) {
+  // const [selectedFilter, setSelectedFilter] = useState(filters[0]);
+  // const handleClick = (value) => {
+  //   setSelectedFilter(value);
+  //   filterCards(value);
+  // };
+
   return (
     <div>
       {filters.map((filter) => (
         <Label
           text={filter}
-          onClick={() => setSelectedFilter(filter)}
+          onClick={() => onClick(filter)}
           className={
-            filter === selectedFilter ? "projectFilterClicked" : "projectFilter"
+            filter === selected ? "projectFilterClicked" : "projectFilter"
           }
         />
       ))}

@@ -25,11 +25,17 @@ function Footer() {
     <div className="footerOverlay">
       <BackgroundImage className="footerBackground" fluid={imageData}>
         <div className="footer">
-          <span>© 2021 Habib Sogbesan</span>
+          <span>© 2022 Habib Sogbesan</span>
           <div className="footerLinks">
-            <Icon className="footerIcon" icon="github" />
-            <Icon className="footerIcon" icon="linkedin" />
-            <Icon className="footerIcon" icon="twitter" />
+            <a href="https://github.com/hmoskva">
+              <Icon className="footerIcon" icon="github" />
+            </a>
+            <a href="https://www.linkedin.com/in/habib-sogbesan-a6674512b/">
+              <Icon className="footerIcon" icon="linkedin" />
+            </a>
+            <a href="https://twitter.com/HabibDee">
+              <Icon className="footerIcon" icon="twitter" />
+            </a>
           </div>
         </div>
       </BackgroundImage>

@@ -22,6 +22,8 @@
 .projectCard {
   display: flex;
   flex-direction: column;
+  /* width: 443px;
+  height: 414px; */
 }
 
 .projectCard__content {
@@ -65,10 +67,46 @@
   font-weight: 300;
   margin-bottom: 10px;
 }
+/* 
+.labelRow {
+   height: 30px;
+  width: 100%; 
+   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  word-wrap: break-word;
+} */
+
+.labelRow::-webkit-scrollbar {
+  display: none;
+}
 
 .projectCard__name {
   margin-top: 28px;
   font-size: 24px;
   line-height: 30px;
   color: #333333;
+}
+
+@media (max-width: 920px) {
+  .projectCard .projectCard__content,
+  .projectCard .projectCard__overlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .projectCard__background {
+    width: 350px;
+    height: 327px;
+  }
+
+  .projectCard__container {
+    width: 350px;
+  }
+
+  /* .projectCard {
+    width: 350px;
+    height: 327px;
+  } */
 }

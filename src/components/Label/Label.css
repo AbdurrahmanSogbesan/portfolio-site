@@ -65,3 +65,14 @@
 .dark .projectFilterClicked {
   background: #697179;
 }
+
+@media (max-width: 500px) {
+  .projectCard__label:last-child {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .projectFilter{
+    display: inline-block;
+  }
+}

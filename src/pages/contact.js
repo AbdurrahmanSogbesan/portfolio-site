@@ -42,7 +42,7 @@ function Contact() {
           </span>
           <p style={{ color: "var(--textNormal)" }} className="subtitle">
             Get in touch or shoot an email directly on
-            <strong> abdurrahman0803@gmail.com</strong>
+            <strong> h.d.sogbesan@gmail.com</strong>
           </p>
           <form
             id="myForm"

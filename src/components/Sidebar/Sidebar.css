@@ -44,6 +44,11 @@
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  background: whitesmoke;
+}
+
+.dark .bm-menu-wrap {
+  background-color: #333;
 }
 
 /* General sidebar styles */

@@ -1,4 +1,6 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
+import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import Header from "../components/Header/Header";
 import Label from "../components/Label/Label";
 import Icon from "../components/Icon/Icon";
@@ -86,45 +88,6 @@ function IndexPage() {
     },
   ];
 
-  const projects = [
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-    {
-      title: "Bloco",
-      description: "An event planning website",
-      labels: ["VueJS", "NodeJS", "ExpressJS", "MongoDB", "Firebase"],
-      text: "Bloco",
-    },
-  ];
-
   const settings = {
     slidesToShow: 3,
     infinite: true,
@@ -183,6 +146,27 @@ function IndexPage() {
 
   const imageData = data.desktop.childImageSharp.fluid;
 
+  //FIREBASE PROJECTCARDS CODE
+  const [projectCards, setProjectCards] = useState([]);
+
+  const fetchProjectCards = async () => {
+    const q = query(collection(db, "projectCards"), orderBy("title", "asc"));
+
+    const querySnapshot = await getDocs(q);
+    const newProjectCard = [];
+    querySnapshot.forEach((doc) => {
+      newProjectCard.push({
+        id: doc.id,
+        data: doc.data(),
+      });
+    });
+    setProjectCards(newProjectCard);
+  };
+
+  useEffect(() => {
+    fetchProjectCards();
+  }, []);
+
   return (
     <div className={container} id="outer-container">
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
@@ -221,12 +205,14 @@ function IndexPage() {
           </div>
 
           <Slider {...settings}>
-            {projects.map(({ title, description, labels, text }) => (
+            {projectCards.map((projectCard) => (
               <ProjectCard
-                title={title}
-                description={description}
-                labels={labels}
-                text={text}
+                id={projectCard.id}
+                key={projectCard.id}
+                title={projectCard.data.title}
+                description={projectCard.data.description}
+                labels={projectCard.data.labels}
+                text={projectCard.data.text}
               />
             ))}
           </Slider>
