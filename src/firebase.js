@@ -1,8 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// });
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAQmVhn3It8nttPfZ9X0ueW2uqXReFUcXQ",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "portfolio-website-42916.firebaseapp.com",
   projectId: "portfolio-website-42916",
   storageBucket: "portfolio-website-42916.appspot.com",
