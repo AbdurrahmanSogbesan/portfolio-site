@@ -17,16 +17,16 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-dark-mode",
-    {
-      resolve: "gatsby-source-fireimage",
-      options: {
-        credential: require("./firebase-creds.json"),
-        appConfig: {
-          databaseURL: "portfolio-website-42916.nam5.firebaseio.com",
-        },
-        collection: "images",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-fireimage",
+    //   options: {
+    //     credential: require("./firebase-creds.json"),
+    //     appConfig: {
+    //       databaseURL: "portfolio-website-42916.nam5.firebaseio.com",
+    //     },
+    //     collection: "images",
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
