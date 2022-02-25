@@ -57,9 +57,9 @@ function Works() {
       ? projectCards
       : projectCards.filter((p) => p.data.filters.includes(selectedFilter));
 
-  const openModal = () => {
-    return <ProjectModal />;
-  };
+  // const openModal = () => {
+  //   return <ProjectModal />;
+  // };
   return (
     <div className={worksOverlay} id="outer-container">
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
@@ -80,7 +80,8 @@ function Works() {
               {projectCards &&
                 displayedCards.map((projectCard) => (
                   <ProjectCard
-                    onClick={openModal}
+                    // onClick={openModal}
+                    link={projectCard.data.link}
                     id={projectCard.id}
                     key={projectCard.id}
                     title={projectCard.data.title}

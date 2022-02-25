@@ -209,6 +209,7 @@ function IndexPage() {
               <ProjectCard
                 id={projectCard.id}
                 key={projectCard.id}
+                link={projectCard.data.link}
                 title={projectCard.data.title}
                 description={projectCard.data.description}
                 labels={projectCard.data.labels}

@@ -27,13 +27,25 @@ function Footer() {
         <div className="footer">
           <span>© 2022 Habib Sogbesan</span>
           <div className="footerLinks">
-            <a href="https://github.com/hmoskva">
+            <a
+              href="https://github.com/hmoskva"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Icon className="footerIcon" icon="github" />
             </a>
-            <a href="https://www.linkedin.com/in/habib-sogbesan-a6674512b/">
+            <a
+              href="https://www.linkedin.com/in/habib-sogbesan-a6674512b/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Icon className="footerIcon" icon="linkedin" />
             </a>
-            <a href="https://twitter.com/HabibDee">
+            <a
+              href="https://twitter.com/HabibDee"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Icon className="footerIcon" icon="twitter" />
             </a>
           </div>
