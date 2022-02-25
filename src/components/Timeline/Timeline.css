@@ -71,6 +71,16 @@
   margin-left: 2px;
 }
 
+.subtitle a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
 .timelineTitle:hover {
   text-decoration: underline;
 }
