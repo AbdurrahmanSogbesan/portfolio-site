@@ -41,8 +41,10 @@ function Contact() {
             Contact.
           </span>
           <p style={{ color: "var(--textNormal)" }} className="subtitle">
-            Get in touch or shoot an email directly on
-            <strong> h.d.sogbesan@gmail.com</strong>
+            Get in touch or shoot an email directly on{" "}
+            <a href="mailto:h.d.sogbesan@gmail.com">
+              <strong>h.d.sogbesan@gmail.com</strong>
+            </a>
           </p>
           <form
             id="myForm"
