@@ -14,7 +14,6 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import ProjectFilter from "../components/ProjectFilter/ProjectFilter";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-import ProjectModal from "../components/ProjectModal/ProjectModal";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";

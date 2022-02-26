@@ -28,7 +28,9 @@ function Contact() {
       { autoClose: 10000 }
     );
     toast.clearWaitingQueue();
-    document.getElementById("myForm").reset();
+    if (document) {
+      document.getElementById("myForm").reset();
+    }
   }
 
   return (

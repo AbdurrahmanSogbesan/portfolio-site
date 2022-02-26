@@ -38,6 +38,9 @@ import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import "./theme.css";
 import Sidebar from "../components/Sidebar/Sidebar";
+import "@popperjs/core/dist/umd/popper.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.min.js";
 
 function IndexPage() {
   const articles = [
