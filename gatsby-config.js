@@ -6,6 +6,18 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Habib Sogbesan's Portfolio Site",
+        short_name: "HS Portfolio",
+        start_url: "/",
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: "src/images/android-chrome-512x512.png", // This path is relative to the root of the site.
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -17,6 +29,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-dark-mode",
+    "gatsby-plugin-react-helmet",
     // {
     //   resolve: "gatsby-source-fireimage",
     //   options: {
@@ -27,6 +40,7 @@ module.exports = {
     //     collection: "images",
     //   },
     // },
+
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {

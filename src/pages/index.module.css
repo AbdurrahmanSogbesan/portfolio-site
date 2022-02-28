@@ -66,7 +66,7 @@
 .projectTitle {
   display: flex;
   justify-content: space-between;
-  padding-right: 33px;
+  padding-right: 5%;
   margin-bottom: 24px;
 }
 
@@ -91,6 +91,11 @@
 
 .seeAll:hover {
   text-decoration: underline;
+}
+
+.carouselContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .articlesSection {
@@ -163,6 +168,12 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 1419px) {
+  .carouselContainer {
+    all: unset;
+  }
+}
+
 @media (max-width: 992px) {
   .introductionSection {
     padding-left: 30px;
@@ -193,5 +204,26 @@
 @media (max-width: 550px) {
   .name {
     font-size: 85px;
+  }
+}
+
+@media (max-width: 500px) {
+  .introductionSection {
+    padding-left: 15px;
+  }
+  .projectSection {
+    padding-left: 15px;
+  }
+
+  .projectTitle {
+    padding-right: 15px;
+  }
+
+  .articlesSection {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contactOverlay {
+    margin: 0 15px;
   }
 }

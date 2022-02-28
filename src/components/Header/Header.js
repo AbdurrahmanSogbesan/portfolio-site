@@ -20,21 +20,21 @@ function Header() {
         <div className={headerItems}>
           <Link
             className="d-md-flex d-none"
-            to="/works"
+            to="/works/"
             activeClassName={activeStyles}
           >
             <span>Work</span>
           </Link>
           <Link
             className="d-md-flex d-none"
-            to="/about"
+            to="/about/"
             activeClassName={activeStyles}
           >
             <span>About</span>
           </Link>
           <Link
             className="d-md-flex d-none"
-            to="/resume"
+            to="/resume/"
             activeClassName={activeStyles}
           >
             <span>Resume</span>

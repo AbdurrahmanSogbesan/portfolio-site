@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Label from "../Label/Label";
 import "./ProjectFilter.css";
 
-function ProjectFilter({ filters, onClick, selected}) {
-  // const [selectedFilter, setSelectedFilter] = useState(filters[0]);
-  // const handleClick = (value) => {
-  //   setSelectedFilter(value);
-  //   filterCards(value);
-  // };
-
+function ProjectFilter({ filters, onClick, selected }) {
   return (
     <div>
       {filters.map((filter) => (

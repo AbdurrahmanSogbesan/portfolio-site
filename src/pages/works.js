@@ -17,6 +17,7 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Helmet } from "react-helmet";
 
 function Works() {
   const [projectCards, setProjectCards] = useState(null);
@@ -60,51 +61,59 @@ function Works() {
   //   return <ProjectModal />;
   // };
   return (
-    <div className={worksOverlay} id="outer-container">
-      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-      <div id="page-wrap">
-        <Header />
-        <div className={worksContainer}>
-          <span className={titleName}>My Works</span>
-          <div className={projectContent}>
-            <div className={filterSection}>
-              <ProjectFilter
-                filters={filters}
-                onClick={(filter) => setSelectedFilter(filter)}
-                selected={selectedFilter}
-              />
-            </div>
+    <>
+      <Helmet>
+        <title>Habib Sogbesan's Portfolio Site</title>
+      </Helmet>
+      <div className={worksOverlay} id="outer-container">
+        <Sidebar
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+        />
+        <div id="page-wrap">
+          <Header />
+          <div className={worksContainer}>
+            <span className={titleName}>My Works</span>
+            <div className={projectContent}>
+              <div className={filterSection}>
+                <ProjectFilter
+                  filters={filters}
+                  onClick={(filter) => setSelectedFilter(filter)}
+                  selected={selectedFilter}
+                />
+              </div>
 
-            <div className={projectSection}>
-              {projectCards &&
-                displayedCards.map((projectCard) => (
-                  <ProjectCard
-                    // onClick={openModal}
-                    link={projectCard.data.link}
-                    id={projectCard.id}
-                    key={projectCard.id}
-                    title={projectCard.data.title}
-                    description={projectCard.data.description}
-                    labels={projectCard.data.labels}
-                    text={projectCard.data.text}
-                  />
-                ))}
-              {!projectCards && (
-                <SkeletonTheme color="#202020" highlightColor="#fff">
-                  <Skeleton
-                    className={`d-flex flex-md-row flex-column my-3 ${skeletonSizing}`}
-                  />
-                  <Skeleton
-                    className={`d-flex flex-md-row flex-column my-3 ${skeletonSizing}`}
-                  />
-                </SkeletonTheme>
-              )}
+              <div className={projectSection}>
+                {projectCards &&
+                  displayedCards.map((projectCard) => (
+                    <ProjectCard
+                      // onClick={openModal}
+                      link={projectCard.data.link}
+                      id={projectCard.id}
+                      key={projectCard.id}
+                      title={projectCard.data.title}
+                      description={projectCard.data.description}
+                      labels={projectCard.data.labels}
+                      text={projectCard.data.text}
+                    />
+                  ))}
+                {!projectCards && (
+                  <SkeletonTheme color="#202020" highlightColor="#fff">
+                    <Skeleton
+                      className={`d-flex flex-md-row flex-column my-3 ${skeletonSizing}`}
+                    />
+                    <Skeleton
+                      className={`d-flex flex-md-row flex-column my-3 ${skeletonSizing}`}
+                    />
+                  </SkeletonTheme>
+                )}
+              </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

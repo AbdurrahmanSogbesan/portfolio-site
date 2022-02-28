@@ -35,3 +35,10 @@
     padding-right: 30px;
   }
 }
+
+@media (max-width: 500px) {
+  .footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

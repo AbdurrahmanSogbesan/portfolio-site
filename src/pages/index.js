@@ -33,6 +33,7 @@ import {
   subText,
   contactBackground,
   contactOverlay,
+  carouselContainer,
 } from "./index.module.css";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -40,6 +41,8 @@ import "./theme.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import "@popperjs/core/dist/umd/popper.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Helmet } from "react-helmet";
+
 // import "bootstrap/dist/js/bootstrap.min.js";
 
 function IndexPage() {
@@ -152,6 +155,8 @@ function IndexPage() {
   //FIREBASE PROJECTCARDS CODE
   const [projectCards, setProjectCards] = useState([]);
 
+  const [className, setClassName] = useState(null);
+
   const fetchProjectCards = async () => {
     const q = query(collection(db, "projectCards"), orderBy("title", "asc"));
 
@@ -164,6 +169,7 @@ function IndexPage() {
       });
     });
     setProjectCards(newProjectCard);
+    setClassName(carouselContainer);
   };
 
   useEffect(() => {
@@ -171,90 +177,101 @@ function IndexPage() {
   }, []);
 
   return (
-    <div className={container} id="outer-container">
-      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-      <div id="page-wrap">
-        <BackgroundImage className={background} fluid={imageData}>
-          <div>
-            <Header style={{ backgroundColor: "var(--bg)" }} />
+    <>
+      <Helmet>
+        <title>Habib Sogbesan's Portfolio Site</title>
+      </Helmet>
+      <div className={container} id="outer-container">
+        <Sidebar
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+        />
+        <div id="page-wrap">
+          <BackgroundImage className={background} fluid={imageData}>
+            <div>
+              <Header style={{ backgroundColor: "var(--bg)" }} />
 
-            <div className={introductionSection}>
-              <span className={hello}>NICE TO MEET YOU, I AM</span>
-              <span className={name}>HABIB SOGBESAN</span>
-              <span className={lifeStory}>
-                Since beginning my journey as a software engineer nearly 4 years
-                ago, I've done both physical and remote work for agencies, and
-                collaborated with talented people to create seamless software
-                products for both business and consumer use. I'm naturally
-                curious, passionate about problem solving and perpetually
-                working on improving my skills one line of code at a time.
-              </span>
-              <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
+              <div className={introductionSection}>
+                <span className={hello}>NICE TO MEET YOU, I AM</span>
+                <span className={name}>HABIB SOGBESAN</span>
+                <span className={lifeStory}>
+                  Since beginning my journey as a software engineer nearly 4
+                  years ago, I've done both physical and remote work for
+                  agencies, and collaborated with talented people to create
+                  seamless software products for both business and consumer use.
+                  I'm naturally curious, passionate about problem solving and
+                  perpetually working on improving my skills one line of code at
+                  a time.
+                </span>
+                <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
+              </div>
             </div>
-          </div>
-        </BackgroundImage>
+          </BackgroundImage>
 
-        <div
-          className={projectSection}
-          style={{ backgroundColor: "var(--projectbg)" }}
-        >
-          <div className={projectTitle}>
-            <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
-            <Link to="/works">
+          <div
+            className={projectSection}
+            style={{ backgroundColor: "var(--projectbg)" }}
+          >
+            <div className={projectTitle}>
+              <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
+              <Link to="/works">
+                <span className={seeAll}>
+                  See All <Icon icon="arrow" />
+                </span>
+              </Link>
+            </div>
+
+            <span className={className}>
+              <Slider {...settings} style={{ maxWidth: "1419px" }}>
+                {projectCards.map((projectCard) => (
+                  <ProjectCard
+                    id={projectCard.id}
+                    key={projectCard.id}
+                    link={projectCard.data.link}
+                    title={projectCard.data.title}
+                    description={projectCard.data.description}
+                    labels={projectCard.data.labels}
+                    text={projectCard.data.text}
+                  />
+                ))}
+              </Slider>
+            </span>
+          </div>
+
+          <div className={articlesSection}>
+            <div className={articleTitle}>
+              <span className={articleIntro}>ARTICLES</span>
               <span className={seeAll}>
                 See All <Icon icon="arrow" />
               </span>
-            </Link>
-          </div>
-
-          <Slider {...settings}>
-            {projectCards.map((projectCard) => (
-              <ProjectCard
-                id={projectCard.id}
-                key={projectCard.id}
-                link={projectCard.data.link}
-                title={projectCard.data.title}
-                description={projectCard.data.description}
-                labels={projectCard.data.labels}
-                text={projectCard.data.text}
-              />
-            ))}
-          </Slider>
-        </div>
-
-        <div className={articlesSection}>
-          <div className={articleTitle}>
-            <span className={articleIntro}>ARTICLES</span>
-            <span className={seeAll}>
-              See All <Icon icon="arrow" />
-            </span>
-          </div>
-          <div className={articleContent}>
-            {articles.map(({ title, date, time }) => (
-              <Article title={title} date={date} time={time} />
-            ))}
-          </div>
-        </div>
-
-        <div
-          className={contactOverlay}
-          style={{ backgroundColor: "var(--contact-bg)" }}
-        >
-          <BackgroundImage className={contactBackground} fluid={imageData}>
-            <div className={contactSection}>
-              <span className={like}>Like what you see</span>
-              <span className={subText}>
-                Lorem ipsum dlor soli met islum doe net hit...
-              </span>
-              <Link to="/contact">
-                <Button className="button" text="Reach out" />
-              </Link>
             </div>
-          </BackgroundImage>
+            <div className={articleContent}>
+              {articles.map(({ title, date, time }) => (
+                <Article title={title} date={date} time={time} />
+              ))}
+            </div>
+          </div>
+
+          <div
+            className={contactOverlay}
+            style={{ backgroundColor: "var(--contact-bg)" }}
+          >
+            <BackgroundImage className={contactBackground} fluid={imageData}>
+              <div className={contactSection}>
+                <span className={like}>Like what you see</span>
+                <span className={subText}>
+                  Lorem ipsum dlor soli met islum doe net hit...
+                </span>
+                <Link to="/contact">
+                  <Button className="button" text="Reach out" />
+                </Link>
+              </div>
+            </BackgroundImage>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -15,6 +15,7 @@ import {
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { Helmet } from "react-helmet";
 
 toast.configure();
 
@@ -34,66 +35,81 @@ function Contact() {
   }
 
   return (
-    <div className={contactOverlay} id="outer-container">
-      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-      <div id="page-wrap">
-        <Header />
-        <div className={contactContainer}>
-          <span style={{ color: "var(--textNormal)" }} className={contactTitle}>
-            Contact.
-          </span>
-          <p style={{ color: "var(--textNormal)" }} className="subtitle">
-            Get in touch or shoot an email directly on{" "}
-            <a href="mailto:h.d.sogbesan@gmail.com">
-              <strong>h.d.sogbesan@gmail.com</strong>
-            </a>
-          </p>
-          <form
-            id="myForm"
-            onSubmit={handleSubmit}
-            className={contactForm}
-            action="submit"
-          >
-            <TextBox
-              name="name"
-              type="text"
-              placeholder="Name"
-              required="true"
-            />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
-            <TextBox
-              name="email"
-              type="email"
-              placeholder="Email"
-              required="true"
-            />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
-            />
-            <TextArea
-              name="message"
-              placeholder="Message"
-              rows="5"
-              required="true"
-            />
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
-            <Button
-              disabled={state.submitting}
-              className="contactButton"
-              text="Send Message"
-            />
-          </form>
-          <ToastContainer limit={1} />
+    <>
+      <Helmet>
+        <title>Habib Sogbesan's Portfolio Site</title>
+      </Helmet>
+      <div className={contactOverlay} id="outer-container">
+        <Sidebar
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+        />
+        <div id="page-wrap">
+          <Header />
+          <div className={contactContainer}>
+            <span
+              style={{ color: "var(--textNormal)" }}
+              className={contactTitle}
+            >
+              Contact.
+            </span>
+            <p style={{ color: "var(--textNormal)" }} className="subtitle">
+              Get in touch or shoot an email directly on{" "}
+              <a href="mailto:h.d.sogbesan@gmail.com">
+                <strong>h.d.sogbesan@gmail.com</strong>
+              </a>
+            </p>
+            <form
+              id="myForm"
+              onSubmit={handleSubmit}
+              className={contactForm}
+              action="submit"
+            >
+              <TextBox
+                name="name"
+                type="text"
+                placeholder="Name"
+                required="true"
+              />
+              <ValidationError
+                prefix="Name"
+                field="name"
+                errors={state.errors}
+              />
+              <TextBox
+                name="email"
+                type="email"
+                placeholder="Email"
+                required="true"
+              />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
+              <TextArea
+                name="message"
+                placeholder="Message"
+                rows="5"
+                required="true"
+              />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
+              <Button
+                disabled={state.submitting}
+                className="contactButton"
+                text="Send Message"
+              />
+            </form>
+            <ToastContainer limit={1} />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 
