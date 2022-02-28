@@ -214,7 +214,7 @@ function IndexPage() {
           >
             <div className={projectTitle}>
               <span className={projectIntro}>CHECK OUT MY PROJECTS</span>
-              <Link to="/works">
+              <Link to="/works/">
                 <span className={seeAll}>
                   See All <Icon icon="arrow" />
                 </span>
@@ -262,7 +262,7 @@ function IndexPage() {
                 <span className={subText}>
                   Lorem ipsum dlor soli met islum doe net hit...
                 </span>
-                <Link to="/contact">
+                <Link to="/contact/">
                   <Button className="button" text="Reach out" />
                 </Link>
               </div>
