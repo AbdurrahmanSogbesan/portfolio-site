@@ -18,7 +18,7 @@ function ProjectCard({ title, description, labels, text, onClick, link }) {
       query {
         desktop: file(relativePath: { eq: "projectScreenshot.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 443) {
+            fluid(quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

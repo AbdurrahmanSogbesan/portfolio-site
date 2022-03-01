@@ -33,7 +33,7 @@ import {
   subText,
   contactBackground,
   contactOverlay,
-  carouselContainer,
+  carouselContainer
 } from "./index.module.css";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -109,6 +109,26 @@ function IndexPage() {
     initialSlide: 0,
     responsive: [
       {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerPadding: "60px",
+          className: "center",
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "60px",
+          className: "center",
+          centerMode: true,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
@@ -155,8 +175,6 @@ function IndexPage() {
   //FIREBASE PROJECTCARDS CODE
   const [projectCards, setProjectCards] = useState([]);
 
-  const [className, setClassName] = useState(null);
-
   const fetchProjectCards = async () => {
     const q = query(collection(db, "projectCards"), orderBy("title", "asc"));
 
@@ -169,7 +187,6 @@ function IndexPage() {
       });
     });
     setProjectCards(newProjectCard);
-    setClassName(carouselContainer);
   };
 
   useEffect(() => {
@@ -221,8 +238,8 @@ function IndexPage() {
               </Link>
             </div>
 
-            <span className={className}>
-              <Slider {...settings} style={{ maxWidth: "1419px" }}>
+            <span className={carouselContainer}>
+              <Slider {...settings}>
                 {projectCards.map((projectCard) => (
                   <ProjectCard
                     id={projectCard.id}

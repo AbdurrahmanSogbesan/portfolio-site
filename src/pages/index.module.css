@@ -94,8 +94,7 @@
 }
 
 .carouselContainer {
-  display: flex;
-  justify-content: center;
+  padding-right: 47px;
 }
 
 .articlesSection {
@@ -168,12 +167,6 @@
   background-repeat: no-repeat;
 }
 
-@media (max-width: 1419px) {
-  .carouselContainer {
-    all: unset;
-  }
-}
-
 @media (max-width: 992px) {
   .introductionSection {
     padding-left: 30px;
@@ -189,6 +182,10 @@
 
   .projectTitle {
     padding-right: 30px;
+  }
+
+  .carouselContainer {
+    padding-right: 0;
   }
 
   .articlesSection {
