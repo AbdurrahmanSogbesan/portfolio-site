@@ -224,4 +224,13 @@
   .contactOverlay {
     margin: 0 15px;
   }
+  .carouselContainer {
+    padding-left: inherit;
+  }
+}
+
+@media (max-width: 400px) {
+  .carouselContainer {
+    padding-left: 11px;
+  }
 }
