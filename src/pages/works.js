@@ -95,6 +95,7 @@ function Works() {
                       description={projectCard.data.description}
                       labels={projectCard.data.labels}
                       text={projectCard.data.text}
+                      image={projectCard.data.thumbnail}
                     />
                   ))}
                 {!projectCards && (
