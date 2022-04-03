@@ -9,6 +9,7 @@ import Footer from "../components/Footer/Footer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
+import ResumePDF from "../resume/resume.pdf";
 
 function resume() {
   return (
@@ -26,17 +27,13 @@ function resume() {
           <Header />
           <div className={resumeContainer}>
             <span className={resumeTitle}>Resume.</span>
-            <p className="subtitle">
+            <p className="subtitle" style={{ color: "var(--textNormal)" }}>
               Reach out to me via my{" "}
               <Link to="/contact">
                 <strong>contact page</strong>
               </Link>{" "}
               or{" "}
-              <a
-                href="https://www.canva.com/design/DAE5Yc0Ghxs/q4zgW6OFpOn1zD0rTRBQ1A/view?utm_content=DAE5Yc0Ghxs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
                 <strong>view</strong>
               </a>{" "}
               the resume
