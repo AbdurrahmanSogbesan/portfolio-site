@@ -1,7 +1,5 @@
 import React from "react";
 import "./ProjectCard.css";
-import { graphql, useStaticQuery } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
 import Label from "../Label/Label";
 
 function ProjectCard({

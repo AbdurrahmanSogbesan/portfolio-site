@@ -33,7 +33,7 @@ import {
   subText,
   contactBackground,
   contactOverlay,
-  carouselContainer
+  carouselContainer,
 } from "./index.module.css";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -249,6 +249,7 @@ function IndexPage() {
                     description={projectCard.data.description}
                     labels={projectCard.data.labels}
                     text={projectCard.data.text}
+                    image={projectCard.data.thumbnail}
                   />
                 ))}
               </Slider>

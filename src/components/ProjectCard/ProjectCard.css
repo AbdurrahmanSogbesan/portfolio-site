@@ -114,6 +114,10 @@
     width: 350px;
   }
 
+  .projectCard__content {
+    left: 22px;
+  }
+
   /* .projectCard {
     width: 350px;
     height: 327px;
