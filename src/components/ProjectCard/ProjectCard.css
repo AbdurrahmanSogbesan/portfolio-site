@@ -23,8 +23,10 @@
 .projectCard {
   display: flex;
   flex-direction: column;
-  /* width: 443px;
-  height: 414px; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eeee;
 }
 
 .projectCard__content {
