@@ -18,6 +18,7 @@
 
 .contactContainer {
   padding: 0 100px;
+  text-align: center;
 }
 
 .contactTitle {
@@ -31,6 +32,9 @@
 .contactForm {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 @media (max-width: 920px) {
