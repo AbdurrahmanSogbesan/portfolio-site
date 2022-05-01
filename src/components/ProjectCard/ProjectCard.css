@@ -38,6 +38,7 @@
   opacity: 0;
   box-shadow: none;
   transition: opacity 0.2s ease-in;
+  max-width: 390px;
 }
 
 .projectCard__overlay {
@@ -116,6 +117,9 @@
 
   .projectCard__content {
     left: 22px;
+  }
+  .projectBaseText {
+    max-width: 303px;
   }
 
   /* .projectCard {

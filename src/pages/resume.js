@@ -26,17 +26,17 @@ function resume() {
         <div id="page-wrap">
           <Header />
           <div className={resumeContainer}>
-            <span className={resumeTitle}>Resume.</span>
+            <span className={resumeTitle}>My Resume.</span>
             <p className="subtitle" style={{ color: "var(--textNormal)" }}>
-              Reach out to me via my{" "}
-              <Link to="/contact">
-                <strong>contact page</strong>
-              </Link>{" "}
-              or{" "}
+              Click{" "}
               <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
-                <strong>view</strong>
+                <strong>here</strong>
               </a>{" "}
-              the resume
+              to view my resume. If you would like to send me a message, click{" "}
+              <Link to="/contact">
+                <strong>here</strong>
+              </Link>{" "}
+              to go to the Contact page
             </p>
           </div>
           <Footer />

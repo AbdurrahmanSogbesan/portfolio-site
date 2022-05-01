@@ -53,8 +53,9 @@ function Contact() {
             >
               Contact.
             </span>
+            <p>Have a message for me?</p>
             <p style={{ color: "var(--textNormal)" }} className="subtitle">
-              Get in touch or shoot an email directly on{" "}
+              You can fill in the textboxes below, or simply send a mail to{" "}
               <a href="mailto:h.d.sogbesan@gmail.com">
                 <strong>h.d.sogbesan@gmail.com</strong>
               </a>
@@ -68,7 +69,7 @@ function Contact() {
               <TextBox
                 name="name"
                 type="text"
-                placeholder="Name"
+                placeholder="Your Full Name"
                 required="true"
               />
               <ValidationError
@@ -89,7 +90,7 @@ function Contact() {
               />
               <TextArea
                 name="message"
-                placeholder="Message"
+                placeholder="Type in your message here"
                 rows="5"
                 required="true"
               />
@@ -101,7 +102,7 @@ function Contact() {
               <Button
                 disabled={state.submitting}
                 className="contactButton"
-                text="Send Message"
+                text="Send"
               />
             </form>
             <ToastContainer limit={1} />

@@ -15,7 +15,12 @@ function ProjectCard({
     <div className="projectCard__container">
       <div
         className="projectCard__background"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{
+          backgroundImage: `url(${
+            image ||
+            "https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"
+          })`,
+        }}
       >
         <a href={link} target="_blank" rel="noopener noreferrer">
           <div className="projectCard">

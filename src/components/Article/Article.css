@@ -6,6 +6,7 @@
   margin-bottom: 18.75px;
   transition: all 0.5s ease-out 0s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .dark .article {
@@ -33,6 +34,6 @@
   color: #828282;
 }
 
-.dark .details > span  {
+.dark .details > span {
   color: #828282;
 }

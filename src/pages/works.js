@@ -24,9 +24,9 @@ function Works() {
 
   const [filters, setFilters] = useState([
     "All",
-    "Projects",
-    "Dev Tools",
-    "Open Source",
+    "E-Commerce",
+    "SaaS",
+    "Healthcare",
   ]);
 
   const [selectedFilter, setSelectedFilter] = useState("All");

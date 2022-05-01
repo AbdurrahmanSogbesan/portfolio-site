@@ -87,10 +87,12 @@
   color: #000000;
   font-size: 20px;
   line-height: 30px;
+  text-decoration: none;
 }
 
 .seeAll:hover {
   text-decoration: underline;
+  color: #000000;
 }
 
 .carouselContainer {
@@ -119,13 +121,13 @@
 .articleContent {
   max-height: 561px;
   max-height: 570px;
-  -webkit-mask-image: -webkit-gradient(
+  /* -webkit-mask-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
     from(rgba(0, 0, 0, 1)),
     to(rgba(0, 0, 0, 0))
-  );
+  ); */
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

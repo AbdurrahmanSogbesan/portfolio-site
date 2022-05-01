@@ -42,6 +42,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import "@popperjs/core/dist/umd/popper.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Helmet } from "react-helmet";
+import { toast, ToastContainer } from "react-toastify";
 
 // import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -174,6 +175,35 @@ function IndexPage() {
 
   //FIREBASE PROJECTCARDS CODE
   const [projectCards, setProjectCards] = useState([]);
+  const [items, setItems] = useState([]);
+
+  const mediumURL =
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/pramie-technologies-limited";
+
+  const fetchArticles = async () => {
+    await fetch(mediumURL)
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        }
+        throw resp;
+      })
+      .then((resp) => {
+        console.log("resp.items", resp.items);
+        setItems(resp.items);
+      })
+      .catch(() => {
+        toast.error(
+          "Could not fetch articles. Please try again",
+          { position: toast.POSITION.TOP_CENTER },
+          { autoClose: 10000 }
+        );
+      });
+  };
+
+  useEffect(() => {
+    fetchArticles();
+  }, []);
 
   const fetchProjectCards = async () => {
     const q = query(collection(db, "projectCards"), orderBy("title", "asc"));
@@ -212,13 +242,13 @@ function IndexPage() {
                 <span className={hello}>NICE TO MEET YOU, I AM</span>
                 <span className={name}>HABIB SOGBESAN</span>
                 <span className={lifeStory}>
-                  Since beginning my journey as a software engineer nearly 4
-                  years ago, I've done both physical and remote work for
-                  agencies, and collaborated with talented people to create
-                  seamless software products for both business and consumer use.
-                  I'm naturally curious, passionate about problem solving and
-                  perpetually working on improving my skills one line of code at
-                  a time.
+                  I am a Fullstack Software Engineer with over 4 years of
+                  experience, and a proven track record in building web
+                  applications, backend APIs and mobile applications. I am
+                  comfortable working with a number of programming languages
+                  which include JavaScript and Python; as well as within their
+                  respective ecosystems (Typescript, React.js, Vue.js, Node.js,
+                  Nest.js, Django, Flask, and more).
                 </span>
                 <Label text="SOFTWARE DEVELOPER" className="titleLabel" />
               </div>
@@ -259,13 +289,19 @@ function IndexPage() {
           <div className={articlesSection}>
             <div className={articleTitle}>
               <span className={articleIntro}>ARTICLES</span>
-              <span className={seeAll}>
+              <a
+                className={seeAll}
+                href="https://medium.com/pramie-technologies-limited"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--textNormal)" }}
+              >
                 See All <Icon icon="arrow" />
-              </span>
+              </a>
             </div>
             <div className={articleContent}>
-              {articles.map(({ title, date, time }) => (
-                <Article title={title} date={date} time={time} />
+              {items.map(({ title, pubDate, link, index }) => (
+                <Article title={title} date={pubDate} link={link} key={index} />
               ))}
             </div>
           </div>
@@ -276,14 +312,15 @@ function IndexPage() {
           >
             <BackgroundImage className={contactBackground} fluid={imageData}>
               <div className={contactSection}>
-                <span className={like}>Like what you see</span>
+                <span className={like}>Like what you see?</span>
                 <span className={subText}>
-                  Lorem ipsum dlor soli met islum doe net hit...
+                  You can reach me on multiple channels
                 </span>
                 <Link to="/contact/">
-                  <Button className="button" text="Reach out" />
+                  <Button className="button" text="Contact" />
                 </Link>
               </div>
+              <ToastContainer limit={1} />
             </BackgroundImage>
           </div>
           <Footer />
