@@ -25,29 +25,34 @@ function Footer() {
     <div className="footerOverlay">
       <BackgroundImage className="footerBackground" fluid={imageData}>
         <div className="footer">
-          <span>© 2022 Habib Sogbesan</span>
-          <div className="footerLinks">
-            <a
-              href="https://github.com/hmoskva"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon className="footerIcon" icon="github" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/habib-sogbesan-a6674512b/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon className="footerIcon" icon="linkedin" />
-            </a>
-            <a
-              href="https://twitter.com/HabibDee"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon className="footerIcon" icon="twitter" />
-            </a>
+          <div>
+            <span>Content by Fọlábòmí Àmọ̀ó</span>
+          </div>
+          <div className="habibLinks">
+            <span>© 2022 Habib Sogbesan</span>
+            <div className="footerLinks">
+              <a
+                href="https://github.com/hmoskva"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="footerIcon" icon="github" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/habib-sogbesan-a6674512b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="footerIcon" icon="linkedin" />
+              </a>
+              <a
+                href="https://twitter.com/HabibDee"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon className="footerIcon" icon="twitter" />
+              </a>
+            </div>
           </div>
         </div>
       </BackgroundImage>

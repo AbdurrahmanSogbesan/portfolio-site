@@ -29,6 +29,12 @@
   align-items: center;
 }
 
+.habibLinks {
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+}
+
 @media (max-width: 992px) {
   .footer {
     padding-left: 30px;
@@ -40,5 +46,19 @@
   .footer {
     padding-left: 15px;
     padding-right: 15px;
+    flex-direction: column-reverse;
+  }
+
+  .habibLinks {
+    align-items: center;
+    flex-direction: column;
+  }
+  .footerLinks {
+    width: 100%;
+    margin: 10px 0;
+    justify-content: space-around;
+  }
+  .footerLinks > a > div {
+    margin: 0;
   }
 }

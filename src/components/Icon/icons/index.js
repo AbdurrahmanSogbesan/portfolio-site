@@ -7,6 +7,7 @@ const icons = {
   close: require("./close").default,
   sun: require("./sun").default,
   moon: require("./moon").default,
+  fola: require("./fola").default,
 };
 
 export default icons;
